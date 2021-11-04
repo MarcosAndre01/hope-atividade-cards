@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Hope Atividade Cards</string>
+    <string name="lorem_ipsum_advice">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at commodo neque. Nam vitae est in nulla pretium rhoncus. Nunc porttitor elit vel velit pellentesque,  </string>
+    <string name="advice_button_text">Ver Mais Dicas</string>
 </resources>
