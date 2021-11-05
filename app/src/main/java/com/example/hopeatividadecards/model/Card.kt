@@ -3,7 +3,7 @@ package com.example.hopeatividadecards.model
 sealed class Card() {
     abstract val id: String
 
-    data class Advice(override val id: String, val title: String, val message: String) : Card()
+    data class Tip(override val id: String, val title: String, val message: String) : Card()
 
     data class Fact(override val id: String, val title: String, val message: String) : Card()
 
@@ -29,6 +29,7 @@ sealed class Card() {
         override val id: String,
         val title: String,
         val description: String,
+        val imageUrl: String,
         val linkUrl: String
     ) : Card()
 
@@ -37,15 +38,13 @@ sealed class Card() {
         val specialist: String,
         val description: String,
         val imageUrl: String
-    ) :
-        Card()
+    ) : Card()
 
     data class Question(
         override val id: String,
         val isFromCommunity: Boolean,
         val title: String,
         val description: String
-    ) :
-        Card()
+    ) : Card()
 
 }

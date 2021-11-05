@@ -1,5 +1,12 @@
 <resources>
-    <string name="app_name">Hope Atividade Cards</string>
-    <string name="lorem_ipsum_advice">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at commodo neque. Nam vitae est in nulla pretium rhoncus. Nunc porttitor elit vel velit pellentesque,  </string>
+    <string name="app_name">Cards</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at commodo neque. Nam vitae est in nulla pretium rhoncus. Nunc porttitor elit vel velit pellentesque,  </string>
     <string name="advice_button_text">Ver Mais Dicas</string>
+    <string name="article_label">ARTIGO</string>
+    <string name="video_label">VÍDEO</string>
+    <string name="success_history_button_text">Veja a história completa</string>
+    <string name="opinion_card_title">Palavra de Especialista</string>
+    <string name="community_question">Dúvidas da Comunidade</string>
+    <string name="frequent_question">Dúvidas Frequentes</string>
+    <string name="opinion_button">Converse com</string>
 </resources>

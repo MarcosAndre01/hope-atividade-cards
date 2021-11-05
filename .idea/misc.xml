@@ -3,8 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_card_tip.xml" value="0.275" />
+        <entry key="app/src/main/res/drawable/rounded_corner.xml" value="0.3296296296296296" />
+        <entry key="app/src/main/res/drawable/rounded_corner_article_video_hint.xml" value="0.3296296296296296" />
+        <entry key="app/src/main/res/drawable/rounded_corner_label.xml" value="0.32685185185185184" />
+        <entry key="app/src/main/res/font/assistant.xml" value="0.32685185185185184" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/card_advice_item.xml" value="0.34148550724637683" />
+        <entry key="app/src/main/res/layout/card_article_item.xml" value="0.35260416666666666" />
+        <entry key="app/src/main/res/layout/card_fact_item.xml" value="0.35260416666666666" />
+        <entry key="app/src/main/res/layout/card_motivational_item.xml" value="0.35260416666666666" />
+        <entry key="app/src/main/res/layout/card_opinion_item.xml" value="0.35260416666666666" />
+        <entry key="app/src/main/res/layout/card_question_item.xml" value="0.35260416666666666" />
+        <entry key="app/src/main/res/layout/card_successhistory_item.xml" value="0.35260416666666666" />
+        <entry key="app/src/main/res/layout/card_tip_item.xml" value="0.35260416666666666" />
+        <entry key="app/src/main/res/layout/card_video_item.xml" value="0.35260416666666666" />
       </map>
     </option>
   </component>

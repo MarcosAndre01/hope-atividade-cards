@@ -5,10 +5,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.hopeatividadecards.network.HopeApi
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-import java.lang.Exception
 
 const val TAG = "CardsViewModel"
 
@@ -23,12 +21,12 @@ class CardsViewModel : ViewModel() {
 
     private fun getCards() {
         viewModelScope.launch {
-            val getCardsResponse = HopeApi.retrofitService.getCards(0)
+            val getCardsResponse = HopeApi.retrofitService.getCards(6)
             val cardsList = mutableListOf<Card>()
 
             for (networkCard in getCardsResponse) {
                 val newCard: Card = when (networkCard.cardTypeID) {
-                    0 -> Card.Advice(
+                    0 -> Card.Tip(
                         networkCard.id, networkCard.title, networkCard.description
                     )
                     1 -> Card.Fact(
@@ -55,6 +53,7 @@ class CardsViewModel : ViewModel() {
                         networkCard.id,
                         networkCard.title,
                         networkCard.description,
+                        networkCard.imageUrl,
                         networkCard.linkUrl
                     )
                     6 -> Card.Opinion(

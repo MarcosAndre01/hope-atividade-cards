@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="card_title" parent="@style/TextAppearance.AppCompat.Large">
+        <item name="android:fontFamily">@font/assistant</item>
+    </style>
+
+    <style name="card_description" parent="@style/TextAppearance.AppCompat.Body1">
+        <item name="android:fontFamily">@font/assistant</item>
+    </style>
+
+    <style name="label" parent="@style/TextAppearance.AppCompat.Body2">
+        <item name="android:fontFamily">@font/assistant</item>
+        <item name="android:background">@drawable/rounded_corner_label</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="button" parent="@style/Widget.MaterialComponents.Button">
+        <item name="android:fontFamily">@font/assistant</item>
+        <item name="android:backgroundTint">@color/purple_light</item>
+        <item name="android:textColor">@color/purple_dark</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="rounded_image_view">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+
+
+
+</resources>

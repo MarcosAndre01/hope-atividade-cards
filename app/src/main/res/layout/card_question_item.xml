@@ -1,0 +1,61 @@
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginVertical="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/question_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textAppearance="@style/card_title"
+            android:text="TODO"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/question_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/card_description"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/question_title"
+            app:layout_constraintTop_toBottomOf="@id/question_title"
+            android:layout_marginTop="8dp"
+            style="@style/card_description"
+            android:textColor="@color/purple_dark"
+            android:textStyle="bold"
+            tools:text="Dúvidas Frequentes" />
+
+        <TextView
+            android:id="@+id/question_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textAppearance="@style/card_description"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/question_title"
+            app:layout_constraintTop_toBottomOf="@id/question_type"
+            tools:text="@string/lorem_ipsum" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</com.google.android.material.card.MaterialCardView>
