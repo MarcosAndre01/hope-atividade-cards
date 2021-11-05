@@ -1,11 +1,14 @@
 package com.example.hopeatividadecards.network
 
-import com.example.hopeatividadecards.network.Card
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.*
+
+/**
+ * Serviço do retrofit que permite fazer requisições à API do Hope
+ */
 
 private const val BASE_URL = "https://hopeproject.herokuapp.com"
 
@@ -24,6 +27,9 @@ object HopeApi {
     }
 }
 
+/**
+ * Interface com as requisições que podem ser feitas à API
+ */
 interface HopeApiService {
     @GET("/users/anonymous")
     suspend fun getAuthToken(): AuthResponse
@@ -32,5 +38,5 @@ interface HopeApiService {
     suspend fun getCards(
         @Query("limit") limit: Int = 999,
         @Header("Authorization") authToken:  String
-    ): CardResponse
+    ): CardsPageResponse
 }

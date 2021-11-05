@@ -3,6 +3,7 @@ package com.example.hopeatividadecards.model
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.hopeatividadecards.network.CardResponse
 import com.example.hopeatividadecards.network.HopeApi
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -10,19 +11,31 @@ import kotlinx.coroutines.launch
 
 const val TAG = "CardsViewModel"
 
+/**
+ * [ViewModel] responsável por expor a lista de [Card]s a ser mostrada na UI
+ */
 class CardsViewModel : ViewModel() {
 
-    private val _cards = MutableStateFlow(listOf<Card>());
+    private val _cards = MutableStateFlow(listOf<Card>())
+
+    /**
+     * StateFlow que expõe a lista de [Card]s
+     */
     val cards = _cards.asStateFlow()
 
     init {
         getCards()
     }
 
+    /**
+     * Converte a lista de [CardResponse] da requisição GET /cards em uma lista de [Card] que possa
+     * ser exibida pela View
+     */
     private fun getCards() {
         viewModelScope.launch {
             val authToken = HopeApi.retrofitService.getAuthToken().token
-            val cardsResponse = HopeApi.retrofitService.getCards(authToken = authToken).cards
+            val cardsResponse =
+                HopeApi.retrofitService.getCards(authToken = authToken).cardResponses
             val cardsList = mutableListOf<Card>()
 
             for (networkCard in cardsResponse) {

@@ -1,5 +1,8 @@
 package com.example.hopeatividadecards.model
 
+/**
+ * Tipo de dado para representar o [Card] a ser exibido na View.
+ */
 sealed class Card() {
     abstract val id: String
 

@@ -10,6 +10,9 @@ import com.example.hopeatividadecards.databinding.*
 import com.example.hopeatividadecards.model.Card
 import com.squareup.picasso.Picasso
 
+/**
+ * Adapter para o [RecyclerView] que mostra a lista contendo cards de diferentes layouts.
+ */
 class CardAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     class TipViewHolder(val binding: CardTipItemBinding) :
