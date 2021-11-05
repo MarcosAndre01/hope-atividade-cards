@@ -5,13 +5,9 @@ import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import retrofit2.http.GET
-import retrofit2.http.Headers
-import retrofit2.http.Path
+import retrofit2.http.*
 
 private const val BASE_URL = "https://hopeproject.herokuapp.com"
-const val AUTHORIZATION_TOKEN = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZmU0NmRiYTg1NzRlN2JlNDlkYjQ4OCIsImlhdCI6MTYzNjExMzUyMiwiZXhwIjoxNjM2MTk5OTIyfQ.N3R83uscLXQkpt50puwhpU5Xx-l7UZRD42Srj0_UvMA"
-
 
 private val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
@@ -29,11 +25,12 @@ object HopeApi {
 }
 
 interface HopeApiService {
-    @Headers("Authorization:$AUTHORIZATION_TOKEN")
-    @GET("cards")
-    suspend fun getCards(): CardResponse
+    @GET("/users/anonymous")
+    suspend fun getAuthToken(): AuthResponse
 
-    @Headers("Authorization:$AUTHORIZATION_TOKEN")
-    @GET("cards/{id}")
-    suspend fun getCards(@Path("id") id: Int): List<Card>
+    @GET("cards")
+    suspend fun getCards(
+        @Query("limit") limit: Int = 999,
+        @Header("Authorization") authToken:  String
+    ): CardResponse
 }

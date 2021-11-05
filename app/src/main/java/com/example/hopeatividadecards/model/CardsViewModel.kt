@@ -21,10 +21,11 @@ class CardsViewModel : ViewModel() {
 
     private fun getCards() {
         viewModelScope.launch {
-            val getCardsResponse = HopeApi.retrofitService.getCards(6)
+            val authToken = HopeApi.retrofitService.getAuthToken().token
+            val cardsResponse = HopeApi.retrofitService.getCards(authToken = authToken).cards
             val cardsList = mutableListOf<Card>()
 
-            for (networkCard in getCardsResponse) {
+            for (networkCard in cardsResponse) {
                 val newCard: Card = when (networkCard.cardTypeID) {
                     0 -> Card.Tip(
                         networkCard.id, networkCard.title, networkCard.description
